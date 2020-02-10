@@ -10,3 +10,4 @@ six==1.11.0
 tzlocal==1.5.1
 websockets==3.4
 requests==2.22.0
+beautifulsoup4==4.8.2
