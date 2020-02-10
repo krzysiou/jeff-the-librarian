@@ -9,3 +9,4 @@ pytz==2018.3
 six==1.11.0
 tzlocal==1.5.1
 websockets==3.4
+requests==2.22.0
