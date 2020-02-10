@@ -17,7 +17,7 @@ this.running = False
 # Scheduler that will be used to manage events
 sched = AsyncIOScheduler()
 
-
+print(settings.BOT_TOKEN)
 ###############################################################################
 
 def main():
