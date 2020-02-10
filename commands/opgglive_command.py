@@ -76,8 +76,10 @@ class OPGGLIVE(commands.base_command.BaseCommand):
 
             for i in l.findAll("small",{"class":"MapName"}): 
                 MapName=i.text
+
+            l=soup.find("small",{"class":"Time"})
             
-            for i in l.findAll("small",{"class":"Time"}): 
+            for i in l.findAll("span",{"class":"_timeago _timeCountAssigned tip"}): 
                 Time=i.text
 
         else: 
