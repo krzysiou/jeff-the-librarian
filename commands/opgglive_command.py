@@ -81,6 +81,10 @@ class OPGGLIVE(commands.base_command.BaseCommand):
                 Current=i.text
             
             Time=Current[len(Current)-8:len(Current)-3]
+            
+            if(Time[0:1]=="0"):
+                Time=Time[1:4]
+            
             Time.replace(':',',')
             TMP= int(Time)
             TMP+=16
