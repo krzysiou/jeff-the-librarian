@@ -87,7 +87,7 @@ class OPGG(commands.base_command.BaseCommand):
             print("Error")
 
 
-        await message.channel.send(message.author.mention+"\n"+
+        await message.channel.send(
             get_emoji(":small_orange_diamond:")+f"** Nickname: **" + Name + "\n"+
             get_emoji(":military_medal:")+f"** Solo/Duo Rank: **"+SoloDuoRank[1].strip()+"\t"+
             get_emoji(":gem:")+f"** Points: **" + LpSoloDuo[0].strip()+"\t"+

@@ -68,8 +68,8 @@ class OPGGLIVE(commands.base_command.BaseCommand):
             print("Error")
             await message.channel.send(message.author.mention + "\n"+"**Player is currently not in game.**")
 
-        await message.channel.send(message.author.mention + "\n"
-            +get_emoji(":small_blue_diamond:")+f"** "+FriendNames[0]+"**\t"+get_emoji(":military_medal:")+f"** Rank: **"+TierF[0].lstrip().rstrip()+"\t"+get_emoji(":trophy:")+f" **WinRate: **"+Wrf[0][0:8].lstrip().rstrip()+"\t"+get_emoji(":hourglass:")+"** Played Matches: **"+TotalF[0][0:len(TotalF[0])-6].lstrip().rstrip()+"\n"
+        await message.channel.send(
+            get_emoji(":small_blue_diamond:")+f"** "+FriendNames[0]+"**\t"+get_emoji(":military_medal:")+f"** Rank: **"+TierF[0].lstrip().rstrip()+"\t"+get_emoji(":trophy:")+f" **WinRate: **"+Wrf[0][0:8].lstrip().rstrip()+"\t"+get_emoji(":hourglass:")+"** Played Matches: **"+TotalF[0][0:len(TotalF[0])-6].lstrip().rstrip()+"\n"
             +get_emoji(":small_blue_diamond:")+f"** "+FriendNames[1]+"**\t"+get_emoji(":military_medal:")+f"** Rank: **"+TierF[1].lstrip().rstrip()+"\t"+get_emoji(":trophy:")+f" **WinRate: **"+Wrf[1][0:8].lstrip().rstrip()+"\t"+get_emoji(":hourglass:")+f"** Played Matches: **"+TotalF[1][0:len(TotalF[1])-6].lstrip().rstrip()+"\n"
             +get_emoji(":small_blue_diamond:")+f"** "+FriendNames[2]+"**\t"+get_emoji(":military_medal:")+f"** Rank: **"+TierF[2].lstrip().rstrip()+"\t"+get_emoji(":trophy:")+f" **WinRate: **"+Wrf[2][0:8].lstrip().rstrip()+"\t"+get_emoji(":hourglass:")+f"** Played Matches: **"+TotalF[2][0:len(TotalF[2])-6].lstrip().rstrip()+"\n"
             +get_emoji(":small_blue_diamond:")+f"** "+FriendNames[3]+"**\t"+get_emoji(":military_medal:")+f"** Rank: **"+TierF[3].lstrip().rstrip()+"\t"+get_emoji(":trophy:")+f" **WinRate: **"+Wrf[3][0:8].lstrip().rstrip()+"\t"+get_emoji(":hourglass:")+f"** Played Matches: **"+TotalF[3][0:len(TotalF[3])-6].lstrip().rstrip()+"\n"
