@@ -40,7 +40,7 @@ class OPGG(commands.base_command.BaseCommand):
 
             if len(LpSoloDuo) == 0:
                 LpSoloDuo.append("Unranked")
-                SoloDuoWR="Win Rate -"
+                SoloDuoWR="-"
             else:
                 SoloDuoWR = LpSoloDuo[4]
         else: 
@@ -69,7 +69,7 @@ class OPGG(commands.base_command.BaseCommand):
                     FlexLp=FlexRank[3][0:5].strip()
             else:
                 FlexLp="Unranked"
-                FlexWR = "Win Rate -"
+                FlexWR = "-"
 
         #NICKNAME
         if resp.status_code==200: 
