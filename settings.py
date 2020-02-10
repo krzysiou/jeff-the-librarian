@@ -5,7 +5,7 @@ import os
 COMMAND_PREFIX = "'"
 
 # The bot token. Keep this secret!
-BOT_TOKEN = "Njc0MjQ5MzgyMzI5MDU3Mjgw.Xjl1uQ.-bEulaJoTVyhbKjvl-YOyjvD2KA"
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 # The now playing game. Set this to anything false-y ("", None) to disable it
 NOW_PLAYING = "opgg.eune | 'commands"
