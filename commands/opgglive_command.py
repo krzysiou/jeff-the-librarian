@@ -6,7 +6,7 @@ from utils                  import get_emoji
 class OPGGLIVE(commands.base_command.BaseCommand):
 
     def __init__(self):
-        description = "Displays OPGG info of current enemy team (use _ instead of spaces)"
+        description = "Displays OPGG info of current enemy team (use underscore instead of spaces)"
         params = ["nickname"]
         super().__init__(description, params)
 
