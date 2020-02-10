@@ -89,8 +89,8 @@ class OPGGLIVE(commands.base_command.BaseCommand):
 
             TMP2= float(TMP1)
             TMP2+=16
-            TMP3=str(TMP2)
-            TimeEUNE=TMP3.replace("," , ":")
+            TMP3=TMP2.replace("," , ":")
+            TimeEUNE=str(TMP3)
 
         else: 
             print("Error")
