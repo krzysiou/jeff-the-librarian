@@ -80,7 +80,7 @@ class OPGGLIVE(commands.base_command.BaseCommand):
             for i in l.findAll("small",{"class":"Time"}): 
                 Current=i.text
             
-            Time=Current[len(Current)-6:len(Current)]
+            Time=Current[len(Current)-8:len(Current)-3]
             Time.replace(':',',')
             TMP= int(Time)
             TMP+=16
@@ -91,7 +91,7 @@ class OPGGLIVE(commands.base_command.BaseCommand):
             print("Error")
             await message.channel.send(message.author.mention + "\n"+"**Player is currently not in game.**")
 
-        await message.channel.send("**Gamemode: **"+GameMode[0][0:13]+"\t** Map: **"+MapName+"\t**Time: **"+Current+"\n"
+        await message.channel.send("**Gamemode: **"+GameMode[0][0:13]+"\t** Map: **"+MapName+"\t**Time: **"+TimeEUNE+"\n"
             +get_emoji(":small_blue_diamond:")+f"** "+FriendNames[0]+"**\t"+get_emoji(":military_medal:")+f"** Rank: **"+TierF[0].lstrip().rstrip()+"\t"+get_emoji(":trophy:")+f" **WinRate: **"+Wrf[0][0:8].lstrip().rstrip()+"\t"+get_emoji(":hourglass:")+"** Played Matches: **"+TotalF[0][0:len(TotalF[0])-6].lstrip().rstrip()+"\n"
             +get_emoji(":small_blue_diamond:")+f"** "+FriendNames[1]+"**\t"+get_emoji(":military_medal:")+f"** Rank: **"+TierF[1].lstrip().rstrip()+"\t"+get_emoji(":trophy:")+f" **WinRate: **"+Wrf[1][0:8].lstrip().rstrip()+"\t"+get_emoji(":hourglass:")+f"** Played Matches: **"+TotalF[1][0:len(TotalF[1])-6].lstrip().rstrip()+"\n"
             +get_emoji(":small_blue_diamond:")+f"** "+FriendNames[2]+"**\t"+get_emoji(":military_medal:")+f"** Rank: **"+TierF[2].lstrip().rstrip()+"\t"+get_emoji(":trophy:")+f" **WinRate: **"+Wrf[2][0:8].lstrip().rstrip()+"\t"+get_emoji(":hourglass:")+f"** Played Matches: **"+TotalF[2][0:len(TotalF[2])-6].lstrip().rstrip()+"\n"
