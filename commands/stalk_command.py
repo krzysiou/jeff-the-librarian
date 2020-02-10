@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from utils import get_emoji
 
-class OPGG(commands.base_command.BaseCommand):
+class Stalk(commands.base_command.BaseCommand):
 
     def __init__(self):
         description = "Displays OPGG info of given summoner (use underscore instead of spaces)"

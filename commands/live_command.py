@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup 
 from utils                  import get_emoji
 
-class OPGGLIVE(commands.base_command.BaseCommand):
+class Live(commands.base_command.BaseCommand):
 
     def __init__(self):
         description = "Displays OPGG info of current enemy team (use underscore instead of spaces)"
