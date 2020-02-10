@@ -27,14 +27,14 @@ class Live(commands.base_command.BaseCommand):
             print("Successfully opened the web page")  
             soup=BeautifulSoup(resp.text,'html.parser')
 
-            l=soup.find("div",{"class":"SpectatorError"})
+            l=soup.find("div",{"class":"tabItem Content SummonerLayoutContent summonerLayout-spectator"})
 
             Error=[]
 
-            for i in l.findAll("h2"): 
+            for i in l.findAll("div"): 
                 Error.append(i.text)
 
-            if(len(Error)==0):
+            if(len(Error)>5):
                 l=soup.find("table",{"class":"Table Team-100"}) 
 
                 FriendNames = []
