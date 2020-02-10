@@ -69,7 +69,7 @@ class OPGGLIVE(commands.base_command.BaseCommand):
 
             GameMode=[]
             MapName=""
-            Current=""
+            Current="04:41:12"
 
             for i in l.findAll("div",{"class":"Title"}): 
                 GameMode.append(i.text)
@@ -77,19 +77,20 @@ class OPGGLIVE(commands.base_command.BaseCommand):
             for i in l.findAll("small",{"class":"MapName"}): 
                 MapName=i.text
             
-            for i in l.findAll("small",{"class":"Time"}): 
-                Current=i.text
+            # for i in l.findAll("small",{"class":"Time"}): 
+            #     Current=i.text
             
             Time=Current[len(Current)-8:len(Current)-3]
-            
+
             if(Time[0:1]=="0"):
-                Time=Time[1:4]
+                Time=Time[1:len(Time)]
             
-            Time.replace(':',',')
-            TMP= int(Time)
+            Time.replace(":" , ",")
+
+            TMP= float(Time)
             TMP+=16
             TimeEUNE=str(TMP)
-            TimeEUNE.replace(',',':')
+            TimeEUNE.replace("," , ":")
 
         else: 
             print("Error")
