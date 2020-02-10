@@ -78,10 +78,17 @@ class Live(commands.base_command.BaseCommand):
                 Time=Time[1:len(Time)]
             
             TMP1=Time.replace(":" , ".")
-
             TMP2= float(TMP1)
             TMP2+=16
             TMP3=str(TMP2)
+            if(len(TMP3)==2):
+                TMP3 += "00"
+            elif(len(TMP3)==3 and TMP3[2:3]=="."):
+                TMP3 += "00"
+            elif(len(TMP3)==3 and TMP3[1:2]=="."):
+                TMP3 += "0"
+            elif(len(TMP3)==4 and TMP3[2:3]=="."):
+                TMP3 += "0"
             TimeEUNE=TMP3.replace("." , ":")
 
         else: 
