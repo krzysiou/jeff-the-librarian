@@ -85,12 +85,12 @@ class OPGGLIVE(commands.base_command.BaseCommand):
             if(Time[0:1]=="0"):
                 Time=Time[1:len(Time)]
             
-            TMP1=Time.replace(":" , ",")
+            TMP1=Time.replace(":" , ".")
 
             TMP2= float(TMP1)
             TMP2+=16
-            TMP3=TMP2.replace("," , ":")
-            TimeEUNE=str(TMP3)
+            TMP3=str(TMP2)
+            TimeEUNE=TMP3.replace("." , ":")
 
         else: 
             print("Error")
