@@ -69,7 +69,6 @@ def main():
     @client.event
     async def on_message(message):
         await functions.silencer(message,"JoboX#8949")
-        await functions.silencer(message,"Krzysztof#9451")
         await common_handle_message(message)
 
     @client.event
