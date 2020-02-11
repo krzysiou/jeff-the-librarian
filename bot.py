@@ -68,7 +68,7 @@ def main():
 
     @client.event
     async def on_message(message):
-        if str(message.author) in settings.BLACKLIST:
+        if str(message.author.tag) in settings.BLACKLIST:
             await message.channel.send(message.author.mention + settings.QUOTES[random.randrange(0,3)])
         else:
             await common_handle_message(message)
