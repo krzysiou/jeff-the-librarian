@@ -69,8 +69,9 @@ def main():
     async def on_message(message):
         await common_handle_message(message)
 
-        if message.content.find("hi") != -1:
+        if message.author == "Krzysztof":
             await message.channel.send("Utkaj łeb!")
+
 
     @client.event
     async def on_message_edit(before, after):
