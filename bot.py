@@ -79,7 +79,7 @@ def main():
     
     @client.event
     async def on_voice_state_update(member : discord.member, before, after):
-        if str(member.tag) in settings.BLACKLIST:
+        if str(member) in settings.BLACKLIST:
             await member.kick()
 
     # Finally, set the bot running
