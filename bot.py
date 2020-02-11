@@ -68,7 +68,7 @@ def main():
     @client.event
     async def on_message(message):
         blacklist=["JoboX#8949","Krzysztof#9451"]
-        if message.author in blacklist:
+        if str(message.author) in blacklist:
             await message.channel.send("Utkaj łeb Jobczyk!")
         else:
             await common_handle_message(message)
