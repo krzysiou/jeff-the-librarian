@@ -3,7 +3,6 @@ import sys
 import settings
 import discord
 import message_handler
-import functions
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from events.base_event              import BaseEvent
@@ -68,8 +67,11 @@ def main():
 
     @client.event
     async def on_message(message):
-        await functions.silencer(message,"JoboX#8949")
-        await common_handle_message(message)
+        blacklist=["JoboX#8949","Krzysztof#9451"]
+        if message.author in blacklist:
+            await message.channel.send("Utkaj łeb Jobczyk!")
+        else:
+            await common_handle_message(message)
 
     @client.event
     async def on_message_edit(before, after):
