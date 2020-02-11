@@ -3,6 +3,7 @@ import sys
 import settings
 import discord
 import message_handler
+import random
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from events.base_event              import BaseEvent
@@ -67,9 +68,8 @@ def main():
 
     @client.event
     async def on_message(message):
-        blacklist=["JoboX#8949"]
-        if str(message.author) in blacklist:
-            await message.channel.send("Utkaj łeb Jobczyk!")
+        if str(message.author) in settings.BLACKLIST:
+            await message.channel.send(message.author.mention + settings.QUOTES[random.randrange(0,3)])
         else:
             await common_handle_message(message)
 
