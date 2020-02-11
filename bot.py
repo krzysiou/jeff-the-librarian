@@ -69,7 +69,7 @@ def main():
     async def on_message(message):
         #await common_handle_message(message)
 
-        if str(message.author) == "Krzysztof#9451":
+        if str(message.author) == "Krzysztofa#9451":
             await message.channel.send("Utkaj łeb!")
 
 
