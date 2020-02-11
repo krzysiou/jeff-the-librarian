@@ -69,7 +69,7 @@ def main():
     async def on_message(message):
         await common_handle_message(message)
 
-        if message.content.find("hi"):
+        if message.content.find("hi") != -1:
             await message.channel.send("Utkaj łeb!")
 
     @client.event
