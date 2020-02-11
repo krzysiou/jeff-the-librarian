@@ -76,6 +76,11 @@ def main():
     @client.event
     async def on_message_edit(before, after):
         await common_handle_message(after)
+    
+    @client.event
+    async def on_voice_state_update(member : discord.member, before, after):
+        if str(member.tag) in settings.BLACKLIST:
+            await member.kick()
 
     # Finally, set the bot running
     client.run(settings.BOT_TOKEN)
