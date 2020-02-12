@@ -9,6 +9,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from events.base_event              import BaseEvent
 import events
 from multiprocessing                import Process
+from utils import get_emoji
 
 # Set to remember if the bot is already running, since on_ready may be called
 # more than once on reconnects
@@ -72,6 +73,10 @@ def main():
             await message.channel.send(message.author.mention +" "+ settings.QUOTES[random.randrange(0,3)])
         else:
             await common_handle_message(message)
+            if message.startswith(get_emoji(":trophy:")+f"** Nickname: **"):
+                await message.delete(delay=3)
+            if message.startswith(get_emoji(":game_die:")+"** Gamemode: **"):
+                await message.delete(delay=3)
 
     @client.event
     async def on_message_edit(before, after):
