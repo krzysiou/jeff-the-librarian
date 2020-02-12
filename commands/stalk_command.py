@@ -96,3 +96,10 @@ class Stalk(commands.base_command.BaseCommand):
             get_emoji("::small_orange_diamond:")+f"** Points: **" + FlexLp+"\t"+
             get_emoji("::small_orange_diamond:")+f"** Win Rate: **" + FlexWR[len(FlexWR)-4:len(FlexWR)]+"\n"
         )
+
+        @client.event
+        async def on_message(message):
+            if message.content.startswith(get_emoji(":trophy:")+f"** Nickname: **"):
+                await message.delete(delay=20)
+            if message.content.startswith("'stalk"):
+                await message.delete(delay=1)

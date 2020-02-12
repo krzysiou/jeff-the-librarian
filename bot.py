@@ -58,10 +58,6 @@ def main():
             await message.channel.send(message.author.mention +" "+ settings.QUOTES[random.randrange(0,3)])
         else:
             await common_handle_message(message)
-            if message.content.startswith(get_emoji(":trophy:")+f"** Nickname: **"):
-                await message.delete(delay=3)
-            if message.content.startswith(get_emoji(":game_die:")+"** Gamemode: **"):
-                await message.delete(delay=3)
 
     @client.event
     async def on_message_edit(before, after):
