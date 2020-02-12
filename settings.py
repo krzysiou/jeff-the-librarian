@@ -15,4 +15,4 @@ BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
 #Silencer
 BLACKLIST=["JoboX#8949"]
-QUOTES=["Utkaj łeb Jobczyk!","Mówiłem żebyś skleił pizde Jobo.","Dobra wez pal wroty Jobo...","W pizde se klaśnij."]
+QUOTES=["Utkaj łeb Jobczyk!","Mówiłem żebyś skleił pizde Jobo.","Dobra wez pal wroty Jobo...","W pizde se klaśnij.","Ogul se pachy ziomuś."]
