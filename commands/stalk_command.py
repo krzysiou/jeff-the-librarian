@@ -96,3 +96,5 @@ class Stalk(commands.base_command.BaseCommand):
             get_emoji(":gem:")+f"** Points: **" + FlexLp+"\t"+
             get_emoji(":trophy:")+f"** Win Rate: **" + FlexWR[len(FlexWR)-4:len(FlexWR)]+"\n"
         )
+
+        await message.delete(delay=10)
