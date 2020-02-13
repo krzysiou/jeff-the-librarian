@@ -117,10 +117,3 @@ class Live(commands.base_command.BaseCommand):
 
         else: 
             print("Error")
-
-        @client.event
-        async def on_message(message):
-            if message.content.startswith(get_emoji(":game_die:")+"** Gamemode: **"):
-                await message.delete(delay=30)
-            if message.content.startswith("'live"):
-                await message.delete(delay=1)
