@@ -24,6 +24,6 @@ class Random(BaseCommand):
             return
 
         rolled = randint(lower_bound, upper_bound)
-        msg = get_emoji(":game_die:") + f" **You rolled {rolled}!**"
+        msg = get_emoji(":game_die:")+" **You rolled** {rolled}"
 
         await message.channel.send(msg)

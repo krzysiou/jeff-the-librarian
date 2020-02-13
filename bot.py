@@ -61,10 +61,10 @@ def main():
             if message.content.startswith(get_emoji(":trophy:")+f"** Nickname: **"):
                 await message.delete(delay=20)
             if message.content.startswith("'stalk") or message.content.startswith("'live") or message.content.startswith("commands" or message.content.startswith("'random")):
-                await message.delete(delay=0.7)
+                await message.delete(delay=0.5)
             if message.content.startswith(get_emoji(":game_die:")+"** Gamemode: **"):
                 await message.delete(delay=30)
-            if message.content.startswith("Insufficient parameters!") or message.content.startswith("Command List:") or message.content.startswith(get_emoji(":game_die:") + f" **You rolled**"):
+            if message.content.startswith("Insufficient parameters!") or message.content.startswith("Command List:") or message.content.startswith(get_emoji(":game_die:")+" **You rolled**"):
                 await message.delete(delay=10)
 
     @client.event
