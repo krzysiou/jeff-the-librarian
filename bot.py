@@ -64,7 +64,7 @@ def main():
                 await message.delete()
             if message.content.startswith(get_emoji(":game_die:")+"** Gamemode: **"):
                 await message.delete(delay=30)
-            if message.content.startswith("Insufficient parameters!") or message.content.startswith("Command List:") or message.content.startswith(get_emoji(":game_die:")+f" **You rolled**"):
+            if message.content.startswith("Insufficient parameters!") or message.content.startswith("Command List:") or message.content.startswith(get_emoji(":game_die:")+f" **You rolled**") or message.content.startswith("Player is not in game at the moment."):
                 await message.delete(delay=10)
 
     @client.event
