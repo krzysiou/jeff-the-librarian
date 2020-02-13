@@ -61,11 +61,11 @@ def main():
             if message.content.startswith(get_emoji(":trophy:")+f"** Nickname: **"):
                 await message.delete(delay=20)
             if message.content.startswith("'stalk"):
-                await message.delete(delay=1)
+                await message.delete(delay=0.7)
             if message.content.startswith(get_emoji(":game_die:")+"** Gamemode: **"):
                 await message.delete(delay=30)
             if message.content.startswith("'live"):
-                await message.delete(delay=1)
+                await message.delete(delay=0.7)
 
     @client.event
     async def on_message_edit(before, after):
