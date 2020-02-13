@@ -9,9 +9,9 @@ class Commands(commands.base_command.BaseCommand):
 
     async def handle(self, params, message, client):
         from message_handler import COMMAND_HANDLERS
-        msg = message.author.mention + "\n"
+        msg = ""
 
         for cmd in sorted(COMMAND_HANDLERS.items()):
             msg += "\n" + cmd[1].description
 
-        await message.channel.send(msg)
+        await message.channel.send("Command List:\n"+msg)

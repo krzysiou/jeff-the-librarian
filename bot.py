@@ -66,6 +66,8 @@ def main():
                 await message.delete(delay=30)
             if message.content.startswith("'live"):
                 await message.delete(delay=0.7)
+            if message.content.startswith("Insufficient parameters!") or message.content.startswith("Command List:") or message.content.startswith(get_emoji(":game_die:") + f" **You rolled**"):
+                await message.delete(delay=5)
 
     @client.event
     async def on_message_edit(before, after):
