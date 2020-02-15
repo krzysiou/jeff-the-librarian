@@ -67,6 +67,11 @@ def main():
                 await message.delete(delay=30)
             if message.content.startswith("Insufficient parameters!") or message.content.startswith("Command List:") or message.content.startswith(get_emoji(":game_die:")+f" **You rolled**") or message.content.startswith("Player is not in game at the moment."):
                 await message.delete(delay=10)
+    
+    @client.event
+    async def on_typing(channel, user, when):
+        if user.id == 363739193660276747:
+            await channel.send("Czemu piszesz Maju?")
 
     @client.event
     async def on_message_edit(before, after):
