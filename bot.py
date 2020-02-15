@@ -71,7 +71,7 @@ def main():
     @client.event
     async def on_typing(channel, user, when):
         if user.id == 363739193660276747:
-            await channel.send("Czemu piszesz Maju?")
+            await channel.send(user.mention + " Czemu piszesz Maju?")
 
     @client.event
     async def on_message_edit(before, after):
