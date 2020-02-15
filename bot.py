@@ -56,6 +56,7 @@ def main():
     async def on_message(message):
         if str(message.author.id) in settings.BLACKLIST:
             await message.channel.send(settings.QUOTES[random.randrange(0,3)]+"\n"+message.author.mention)
+            await common_handle_message(message)
         else:
             await common_handle_message(message)
             if message.content.startswith(get_emoji(":trophy:")+f"** Nickname: **"):
