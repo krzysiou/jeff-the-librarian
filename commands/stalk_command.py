@@ -81,17 +81,23 @@ class Stalk(commands.base_command.BaseCommand):
             Name=""
             for i in l.findAll("span",{"class":"Name"}): 
                 Name = i.text
+        else: 
+            print("Error")
 
         #ROLE / 
-        l=soup.find("ul",{"class":"Content"})
-        RoleArray=[]
+        if resp.status_code==200: 
+            l=soup.find("ul",{"class":"Content"})
+            RoleArray=[]
 
-        for i in l.findAll("div"): 
+            for i in l.findAll("div"): 
                 RoleArray.append(i.text)
 
         else: 
             print("Error")
 
+
+        print(RoleArray[2])
+        print(RoleArray[5])
 
         await message.channel.send(
             get_emoji(":trophy:")+f"** Nickname: **" + Name + "\n"+
