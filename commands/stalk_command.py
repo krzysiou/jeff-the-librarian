@@ -96,7 +96,11 @@ class Stalk(commands.base_command.BaseCommand):
             print("Error")
 
 
+        print(RoleArray[0])
+        print(RoleArray[1])
         print(RoleArray[2])
+        print(RoleArray[3])
+        print(RoleArray[4])
         print(RoleArray[5])
 
         await message.channel.send(
