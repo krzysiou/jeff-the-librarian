@@ -82,17 +82,15 @@ class Stalk(commands.base_command.BaseCommand):
             for i in l.findAll("span",{"class":"Name"}): 
                 Name = i.text
 
+        #ROLE / 
+
 
         else: 
             print("Error")
 
 
         await message.channel.send(
-            get_emoji(":trophy:")+f"** Nickname: **" + Name + "\n"+
-            get_emoji(":small_orange_diamond:")+f"** Solo/Duo Rank: **"+SoloDuoRank[1].strip()+"\t"+
-            get_emoji(":small_orange_diamond:")+f"** Points: **" + LpSoloDuo[0].strip()+"\t"+
-            get_emoji(":small_orange_diamond:")+f"** Win Rate: **" + SoloDuoWR[len(SoloDuoWR)-4:len(SoloDuoWR)]+"\n"+
-            get_emoji(":small_orange_diamond:")+f"** Flex Rank: **" +FlexRank[2].strip()+"\t"+
-            get_emoji("::small_orange_diamond:")+f"** Points: **" + FlexLp+"\t"+
-            get_emoji("::small_orange_diamond:")+f"** Win Rate: **" + FlexWR[len(FlexWR)-4:len(FlexWR)]+"\n"
+            get_emoji(":cock_gg:")+f"** Nickname: **" + Name + "\n"+
+            get_emoji(":small_orange_diamond:")+f"** Solo/Duo Rank: **"+SoloDuoRank[1].strip()+"\t"+get_emoji(":small_orange_diamond:")+f"** Points: **" + LpSoloDuo[0].strip()+"\t"+get_emoji(":small_orange_diamond:")+f"** Win Rate: **" + SoloDuoWR[len(SoloDuoWR)-4:len(SoloDuoWR)]+"\n"+
+            get_emoji(":small_orange_diamond:")+f"** Flex Rank: **" +FlexRank[2].strip()+"\t"+get_emoji("::small_orange_diamond:")+f"** Points: **" + FlexLp+"\t"+get_emoji("::small_orange_diamond:")+f"** Win Rate: **" + FlexWR[len(FlexWR)-4:len(FlexWR)]+"\n"
         )
