@@ -86,10 +86,10 @@ class Stalk(commands.base_command.BaseCommand):
 
         #ROLE / 
         if resp.status_code==200: 
-            l=soup.find("ul",{"class":"Content"})
+            l=soup.find("td",{"class":"PositionStats"})
             RoleArray=[]
 
-            for i in l.findAll("div",{"class":"Name"}): 
+            for i in l.findAll("div",{"class":"PositionStatContent"}): 
                 RoleArray.append(i.text)
 
         else: 
