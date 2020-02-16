@@ -83,7 +83,11 @@ class Stalk(commands.base_command.BaseCommand):
                 Name = i.text
 
         #ROLE / 
+        l=soup.find("ul",{"class":"Content"})
+        RoleArray=[]
 
+        for i in l.findAll("div"): 
+                RoleArray.append(i.text)
 
         else: 
             print("Error")
@@ -92,5 +96,7 @@ class Stalk(commands.base_command.BaseCommand):
         await message.channel.send(
             get_emoji(":trophy:")+f"** Nickname: **" + Name + "\n"+
             get_emoji(":small_orange_diamond:")+f"** Solo/Duo Rank: **"+SoloDuoRank[1].strip()+"\t"+get_emoji(":small_orange_diamond:")+f"** Points: **" + LpSoloDuo[0].strip()+"\t"+get_emoji(":small_orange_diamond:")+f"** Win Rate: **" + SoloDuoWR[len(SoloDuoWR)-4:len(SoloDuoWR)]+"\n"+
-            get_emoji(":small_orange_diamond:")+f"** Flex Rank: **" +FlexRank[2].strip()+"\t"+get_emoji("::small_orange_diamond:")+f"** Points: **" + FlexLp+"\t"+get_emoji("::small_orange_diamond:")+f"** Win Rate: **" + FlexWR[len(FlexWR)-4:len(FlexWR)]+"\n"
+            get_emoji(":small_orange_diamond:")+f"** Flex Rank: **" +FlexRank[2].strip()+"\t"+get_emoji("::small_orange_diamond:")+f"** Points: **" + FlexLp+"\t"+get_emoji("::small_orange_diamond:")+f"** Win Rate: **" + FlexWR[len(FlexWR)-4:len(FlexWR)]+"\n"+
+            get_emoji(":small_orange_diamond:")+f"** Main Role: **" +RoleArray[2]+"\n"+
+            get_emoji(":small_orange_diamond:")+f"** Sub Role: **" +RoleArray[5]+"\n"
         )
