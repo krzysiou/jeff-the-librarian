@@ -20,6 +20,6 @@ class Opgg(commands.base_command.BaseCommand):
 
         url='https://eune.op.gg/summoner/userName='+ nick
 
-        await message.send(message.author.mention +"\n"
+        await message.channel.send(message.author.mention +"\n"
         +"*** Link: ***" + url
         )
