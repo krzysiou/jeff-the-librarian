@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from utils import get_emoji
 import os
 
-class Mkdir(commands.base_command.BaseCommand):
+class Make(commands.base_command.BaseCommand):
 
     def __init__(self):
         description = "Displays OPGG info of given summoner (use underscore instead of spaces)"
