@@ -13,3 +13,7 @@ QUOTES=["Utkaj łeb Jobczyk!",
         "W pizde se klaśnij.",
         "Ogul se pachy ziomuś.",
         "*Quack Quack* Twoja matka pali crack Jobo."]
+
+TYPING=["Nawet nie próbuj tego wysyłać Jobo!",
+        "O pies zaczyna szczekać.",
+        "Znowu Jobo coś pisze."]

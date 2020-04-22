@@ -70,8 +70,8 @@ def main():
     
     @client.event
     async def on_typing(channel, user, when):
-        if user.id in settings.BLACKLIST:
-            await channel.send("O nie... Jobczyk coś pisze..." + user.mention)
+        if str(user.id) in settings.BLACKLIST:
+            await channel.send(settings.TYPING[random.randrange(0,3)])
 
     @client.event
     async def on_message_edit(before, after):
