@@ -58,7 +58,7 @@ def main():
             await message.channel.send(settings.QUOTES[random.randrange(0,6)]+"\n"+message.author.mention)
             await common_handle_message(message)
         if message.content.startswith("'spotify") and str(message.author.id) not in settings.ADMIN:
-            await message.channel.send("Nie masz odpowiednich uprawnień by uywać tej komendy.\n" + message.author.mention)
+            await message.channel.send("Nie masz odpowiednich uprawnień by używać tej komendy.\n" + message.author.mention)
         else:
             await common_handle_message(message)
     

@@ -23,9 +23,8 @@ class Spotify(commands.base_command.BaseCommand):
             await message.channel.send("Please, provide valid numbers")
             return
 
-        if __name__ == '__main__':
-            global sp
-            token = util.prompt_for_user_token(settings.SPOTIFY_USERNAME, scope='playlist-modify-private,playlist-modify-public', client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET, redirect_uri=settings.SPOTIFY_REDIRECT_URI)
+        global sp
+        token = util.prompt_for_user_token(settings.SPOTIFY_USERNAME, scope='playlist-modify-private,playlist-modify-public', client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET, redirect_uri=settings.SPOTIFY_REDIRECT_URI)
 
         if token:
             sp = spotipy.Spotify(auth=token)
