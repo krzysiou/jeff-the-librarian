@@ -14,10 +14,12 @@ class Spotify(commands.base_command.BaseCommand):
 
     async def handle(self, params, message, client):
         try:
+            print(artist + "  " + track)
+            
             artist = str(params[0])
             artist.replace('_',' ')
             track = str(params[1])
-            track.replace('_',' ')
+            track.replace('',' ')
 
             print(artist + "  " + track)
 
