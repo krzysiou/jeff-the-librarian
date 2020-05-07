@@ -19,6 +19,8 @@ class Spotify(commands.base_command.BaseCommand):
             track = str(params[1])
             track.replace('_',' ')
 
+            print(artist + "  " + track)
+
         except ValueError:
             await message.channel.send("Please, provide valid numbers")
             return
