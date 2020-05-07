@@ -17,3 +17,14 @@ QUOTES=["Utkaj łeb Jobczyk!",
 TYPING=["Nawet nie próbuj tego wysyłać Jobo!",
         "O pies zaczyna szczekać.",
         "Znowu Jobo coś pisze."]
+
+#Spotify Addon
+SPOTIFY_USERNAME = "happyyoko"
+SPOTIFY_PLAYLIST_ID ="4KBdUHSszgkRJTUzUKA0Ho"
+SPOTIFY_CLIENT_ID = os.getenv('SPOTIFY_CLIENT_ID')
+SPOTIFY_CLIENT_SECRET = os.getenv('SPOTIFY_CLIENT_SECRET')
+SPOTIFY_REDIRECT_URI = os.getenv('SPOTIFY_REDIRECT_URI')
+
+#Admin List
+
+ADMIN=["247125162472767488"]
