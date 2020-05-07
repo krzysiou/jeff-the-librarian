@@ -9,16 +9,16 @@ class Spotify(commands.base_command.BaseCommand):
 
     def __init__(self):
         description = "Adds track to a playlist on spotify (use '_' instead of spaces)"
-        params = ["artist","track"]
+        params = ["author","song"]
         super().__init__(description, params)
 
     async def handle(self, params, message, client):
         try:
 
-            artist = str(params[0])
-            artist.replace('_','+')
-            track = str(params[1])
-            track.replace('_','+')
+            author = str(params[0])
+            artist = author.replace('_','+')
+            song = str(params[1])
+            track = song.replace('_','+')
 
             print(artist + "  " + track)
 
