@@ -27,7 +27,6 @@ class Spotify(commands.base_command.BaseCommand):
 
         if settings.SPOTIFY_TOKEN:
             sp = spotipy.Spotify(auth=settings.SPOTIFY_TOKEN)
-            #get_wacken_tracks()
 
             wanted_track = sp.search(q='artist:' + artist + ' track:' + track, type='track')
             
