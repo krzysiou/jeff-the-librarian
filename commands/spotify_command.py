@@ -29,11 +29,7 @@ class Spotify(commands.base_command.BaseCommand):
             sp = spotipy.Spotify(auth=settings.SPOTIFY_TOKEN)
 
             wanted_track = sp.search(q='artist:' + artist + ' track:' + track, type='track')
-            
-            m = re.search("'track_number': 1, 'type': 'track', 'uri': 'spotify:track:(.+?)'}], 'limit", str(wanted_track))
-            if m:
-                extracted_id = m.group(1)
-            #print(wanted_track)
+            extracted_id = wanted_track["tracks"]["items"][0]["id"]
             print("\nAdding: " + extracted_id+"\n")
 
             track_ids = [extracted_id]
