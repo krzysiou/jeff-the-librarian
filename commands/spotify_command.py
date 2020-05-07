@@ -4,7 +4,6 @@ import re
 import spotipy
 import spotipy.util as util
 import settings
-import bot
 
 class Spotify(commands.base_command.BaseCommand):
 
@@ -25,10 +24,10 @@ class Spotify(commands.base_command.BaseCommand):
             return
 
         global sp
-        #token = util.prompt_for_user_token(settings.SPOTIFY_USERNAME, scope='playlist-modify-private,playlist-modify-public', client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET, redirect_uri=settings.SPOTIFY_REDIRECT_URI)
+        token = util.prompt_for_user_token(settings.SPOTIFY_USERNAME, scope='playlist-modify-private,playlist-modify-public', client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET, redirect_uri=settings.SPOTIFY_REDIRECT_URI)
 
-        if bot.token:
-            sp = spotipy.Spotify(auth=bot.token)
+        if token:
+            sp = spotipy.Spotify(auth=token)
             #get_wacken_tracks()
 
             wanted_track = sp.search(q='artist:' + artist + ' track:' + track, type='track')

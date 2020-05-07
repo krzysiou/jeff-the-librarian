@@ -11,17 +11,11 @@ import events
 from multiprocessing                import Process
 from utils import get_emoji
 
-import re
-import spotipy
-import spotipy.util as util
-
 
 this = sys.modules[__name__]
 this.running = False
 
 sched = AsyncIOScheduler()
-
-token = util.prompt_for_user_token(settings.SPOTIFY_USERNAME, scope='playlist-modify-private,playlist-modify-public', client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET, redirect_uri=settings.SPOTIFY_REDIRECT_URI)
 
 def main():
 
