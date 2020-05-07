@@ -16,9 +16,9 @@ class Spotify(commands.base_command.BaseCommand):
         try:
 
             author = str(params[0])
-            artist = author.replace('_','+')
+            artist = author.replace('_',' ')
             song = str(params[1])
-            track = song.replace('_','+')
+            track = song.replace('_',' ')
 
             print(artist + "  " + track)
 
