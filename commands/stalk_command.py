@@ -14,6 +14,7 @@ class Stalk(commands.base_command.BaseCommand):
         try:
             nick = str(params[0])
             nick.replace('_','+')
+            print(nick)
         except ValueError:
             await message.channel.send("Please, provide valid numbers")
             return
