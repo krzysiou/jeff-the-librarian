@@ -24,11 +24,9 @@ class Spotify(commands.base_command.BaseCommand):
             return
 
         global sp
-        token = util.prompt_for_user_token(settings.SPOTIFY_USERNAME, scope='playlist-modify-private,playlist-modify-public', client_id=settings.SPOTIFY_CLIENT_ID, client_secret=settings.SPOTIFY_CLIENT_SECRET, redirect_uri=settings.SPOTIFY_REDIRECT_URI)
-        print(token)
 
-        if token:
-            sp = spotipy.Spotify(auth=token)
+        if settings.SPOTIFY_TOKEN:
+            sp = spotipy.Spotify(auth=settings.SPOTIFY_TOKEN)
             #get_wacken_tracks()
 
             wanted_track = sp.search(q='artist:' + artist + ' track:' + track, type='track')
