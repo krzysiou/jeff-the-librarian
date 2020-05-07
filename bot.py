@@ -54,14 +54,17 @@ def main():
 
     @client.event
     async def on_message(message):
-        if str(message.author.id) in settings.BLACKLIST:
-            await message.channel.send(settings.QUOTES[random.randrange(0,6)]+"\n"+message.author.mention)
-            await common_handle_message(message)
-        elif message.content.startswith("'spotify") and str(message.author.id) not in settings.ADMIN:
-            await message.channel.send("Nie masz odpowiednich uprawnień by używać tej komendy.\n" + message.author.mention)
+        if not message.content.startswith("'spotify"):
+            if str(message.author.id) in settings.BLACKLIST:
+                await message.channel.send(settings.QUOTES[random.randrange(0,6)]+"\n"+message.author.mention)
+                await common_handle_message(message)
+            else:
+                await common_handle_message(message)
         else:
-            await common_handle_message(message)
-    
+            if str(message.author.id) in settings.ADMIN:
+                await common_handle_message(message)
+            else:
+                await message.channel.send("Nie masz odpowiednich uprawnień by używać tej komendy.\n" + message.author.mention)
     @client.event
     async def on_typing(channel, user, when):
         if str(user.id) in settings.BLACKLIST:
