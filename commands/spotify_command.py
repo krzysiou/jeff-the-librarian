@@ -4,6 +4,8 @@ import re
 import spotipy
 import spotipy.util as util
 import settings
+import base64
+import requests
 
 class Spotify(commands.base_command.BaseCommand):
 
@@ -26,10 +28,24 @@ class Spotify(commands.base_command.BaseCommand):
             await message.channel.send("Please, provide valid numbers")
             return
 
-        global sp
+        payload = {
+            'grant_type': 'refresh_token',
+            'refresh_token': settings.SPOTIFY_REFRESH_TOKEN
+        }
 
-        if settings.SPOTIFY_TOKEN:
-            sp = spotipy.Spotify(auth=settings.SPOTIFY_TOKEN)
+        message = settings.SPOTIFY_CLIENT_ID + ":" + settings.SPOTIFY_CLIENT_SECRET
+        message_bytes = message.encode('ascii')
+        base64_bytes = base64.b64encode(message_bytes)
+        base64_message = base64_bytes.decode('ascii')
+
+        response = requests.post(url="https://accounts.spotify.com/api/token", data=payload, headers={'Authorization': 'Basic '+base64_message})
+        json_response = response.json()
+
+        token = json_response["access_token"]
+
+        if token:
+            global sp
+            sp = spotipy.Spotify(auth=token)
 
             wanted_track = sp.search(q='artist:' + artist + ' track:' + track, type='track')
             extracted_id = wanted_track["tracks"]["items"][0]["id"]
