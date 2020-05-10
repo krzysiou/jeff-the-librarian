@@ -33,6 +33,8 @@ class Spotify(commands.base_command.BaseCommand):
             'refresh_token': settings.SPOTIFY_REFRESH_TOKEN
         }
 
+        #encode
+
         message = settings.SPOTIFY_CLIENT_ID + ":" + settings.SPOTIFY_CLIENT_SECRET
         message_bytes = message.encode('ascii')
         base64_bytes = base64.b64encode(message_bytes)
