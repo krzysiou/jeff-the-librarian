@@ -14,10 +14,10 @@ class Authorize(commands.base_command.BaseCommand):
 
     async def handle(self, params, message, client):
         
-        await message.channel.send("Click the link below and authorize yourself on spotify website.")
+        await message.author.send("Click the link below and authorize yourself on spotify website.")
 
         url='https://accounts.spotify.com/pl/authorize?scope=playlist-modify-private,playlist-modify-public&response_type=code&redirect_uri=https:%2F%2Flocalhost:8080&client_id='+settings.SPOTIFY_CLIENT_ID
 
-        await message.channel.send(url + '\n' +  message.author.mention)
+        await message.author.send(url + '\n' +  message.author.mention)
 
 
