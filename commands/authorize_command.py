@@ -9,7 +9,8 @@ class Spotify(commands.base_command.BaseCommand):
 
     def __init__(self):
         description = "Authorize command."
-        super().__init__(description)
+        params = []
+        super().__init__(description, params)
 
     async def handle(self, params, message, client):
         
