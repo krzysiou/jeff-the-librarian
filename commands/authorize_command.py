@@ -5,7 +5,7 @@ import spotipy
 import spotipy.util as util
 import settings
 
-class Spotify(commands.base_command.BaseCommand):
+class Authorize(commands.base_command.BaseCommand):
 
     def __init__(self):
         description = "Authorize command."
