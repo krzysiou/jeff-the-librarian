@@ -73,11 +73,8 @@ def main():
     @client.event
     async def on_voice_state_update(user, before, after):
         if str(user.id) in settings.BLACKLIST:
-            print(user.voice.channel.id)
             if str(user.voice.channel.id) == "676571346733629498":
-                print("HE IS HERE")
-                await user.setMute(True, 'Sory Jobo')
-
+                await user.voice.edit(reason=None,mute=True)
     @client.event
     async def on_message_edit(before, after):
         await common_handle_message(after)
