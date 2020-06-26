@@ -74,8 +74,8 @@ def main():
     async def on_voice_state_update(user, before, after):
         if str(user.id) in settings.BLACKLIST:
             print(user.voice)
-            if user.voice == "676571346733629498":
-                user.voice = True
+            if str(user.voice.channel.id) == "676571346733629498":
+                user.voice.mute = True
 
     @client.event
     async def on_message_edit(before, after):
