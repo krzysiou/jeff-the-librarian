@@ -69,11 +69,11 @@ def main():
     async def on_typing(channel, user, when):
         if str(user.id) in settings.BLACKLIST:
             await channel.send(settings.TYPING[random.randrange(0,3)])
-            
+
     @client.event
-    async def on_voice_state_update(member, before, after):
-        if member.id in settings.BLACKLIST:
-            member.send("lol")
+    async def on_voice_state_update(user, before, after):
+        if str(user.id) in settings.BLACKLIST:
+            await user.send("lol")
 
     @client.event
     async def on_message_edit(before, after):
