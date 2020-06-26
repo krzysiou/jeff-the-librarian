@@ -73,7 +73,8 @@ def main():
     @client.event
     async def on_voice_state_update(user, before, after):
         if str(user.id) in settings.BLACKLIST:
-            if user.voice.channel.id == "676571346733629498":
+            print(user.voice.channel.id)
+            if str(user.voice.channel.id) == "676571346733629498":
                 print("HE IS HERE")
                 await user.setMute(True, 'Sory Jobo')
 
