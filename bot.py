@@ -75,6 +75,8 @@ def main():
         if str(user.id) in settings.BLACKLIST:
             if str(user.voice.channel.id) == "676571346733629498":
                 await user.edit(reason=None,mute=True)
+            else:
+                await user.edit(reason=None,mute=False)
     @client.event
     async def on_message_edit(before, after):
         await common_handle_message(after)
