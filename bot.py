@@ -73,9 +73,10 @@ def main():
     @client.event
     async def on_voice_state_update(user, before, after):
         if str(user.id) in settings.BLACKLIST:
-            if str(user.voice.channel.id) == "689143945803857933" and before.mute == False and str(before.channel.id) != "689143945803857933":
+            print("ye")
+            if str(user.voice.channel.id) == "726117836358942802" and before.mute == False and str(before.channel.id) != "726117836358942802":
                 await user.edit(reason=None,mute=True)
-            if str(user.voice.channel.id) != "689143945803857933" and before.mute == True and str(before.channel.id) == "689143945803857933":
+            if str(user.voice.channel.id) != "726117836358942802" and before.mute == True and str(before.channel.id) == "726117836358942802":
                 await user.edit(reason=None,mute=False)
     @client.event
     async def on_message_edit(before, after):
