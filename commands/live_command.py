@@ -81,7 +81,7 @@ class Live(commands.base_command.BaseCommand):
                     Current=i.text
                 print(Current)
                 Time=Current[len(Current)-8:len(Current)-3]
-
+                print(Time)
                 if(Time[0:1]=="0"):
                     Time=Time[1:len(Time)]
                 
