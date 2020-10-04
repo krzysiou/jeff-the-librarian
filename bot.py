@@ -83,7 +83,7 @@ def main():
     async def on_message_edit(before, after):
         await common_handle_message(after)
 
-    client.run(settings.BOT_TOKEN)
+    client.login(settings.BOT_TOKEN)
 
 if __name__ == "__main__":
     main()
