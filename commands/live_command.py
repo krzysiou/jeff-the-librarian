@@ -79,7 +79,7 @@ class Live(commands.base_command.BaseCommand):
                 
                 for i in l.findAll("small",{"class":"Time"}): 
                     Current=i.text
-                
+                print(Current)
                 Time=Current[len(Current)-8:len(Current)-3]
 
                 if(Time[0:1]=="0"):
