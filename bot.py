@@ -69,6 +69,12 @@ def main():
     async def on_typing(channel, user, when):
         if str(user.id) in settings.BLACKLIST:
             await channel.send(settings.TYPING[random.randrange(0,3)])
+    
+    @client.event
+    async def on_member_remove(member):
+        print("lel")
+        WELCOME_CHANNEL = client.get_channel(688420903909982230)
+        await WELCOME_CHANNEL.send('Wygląda na to, że '+ member.mention +' Nas opuścił.')
 
     @client.event
     async def on_voice_state_update(user, before, after):
