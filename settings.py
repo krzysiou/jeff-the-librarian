@@ -1,3 +1,5 @@
+#settings
+
 import os
 
 COMMAND_PREFIX = "'"
