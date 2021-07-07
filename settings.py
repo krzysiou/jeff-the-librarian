@@ -5,9 +5,6 @@ BOT_TOKEN = os.getenv('BOT_TOKEN')
 NOW_PLAYING = "Stalker | 'commands"
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 
-#Silencer
-BLACKLIST=["404370425804488704","676854530570321957"]
-
 #Spotify Addon
 SPOTIFY_USERNAME = "happyyoko"
 SPOTIFY_PLAYLIST_ID ="4KBdUHSszgkRJTUzUKA0Ho"
