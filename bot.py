@@ -55,36 +55,13 @@ def main():
     @client.event
     async def on_message(message):
         if not message.content.startswith("'spotify"):
-            if str(message.author.id) in settings.BLACKLIST:
-                await message.channel.send(settings.QUOTES[random.randrange(0,6)]+"\n"+message.author.mention)
-                await common_handle_message(message)
-            else:
-                await common_handle_message(message)
+            await common_handle_message(message)
         else:
             if str(message.author.id) in settings.ADMIN:
                 await common_handle_message(message)
             else:
                 await message.channel.send("Nie masz odpowiednich uprawnień by używać tej komendy.\n" + message.author.mention)
-    @client.event
-    async def on_typing(channel, user, when):
-        if str(user.id) in settings.BLACKLIST:
-            await channel.send(settings.TYPING[random.randrange(0,3)])
-    
-    @client.event
-    async def on_member_remove(member):
-        print("lel")
-        WELCOME_CHANNEL = client.get_channel(688420903909982230)
-        await WELCOME_CHANNEL.send('Wygląda na to, że '+ member.mention +' Nas opuścił.')
 
-    @client.event
-    async def on_voice_state_update(user, before, after):
-        if str(user.id) in settings.BLACKLIST:
-            print("ye")
-            print(user.voice.channel)
-            if str(user.voice.channel) == "Filutek" and before.mute == False and str(before.channel) != "Filutek":
-                await user.edit(reason=None,mute=True)
-            if str(user.voice.channel) != "Filutek" and before.mute == True and str(before.channel) == "Filutek":
-                await user.edit(reason=None,mute=False)
     @client.event
     async def on_message_edit(before, after):
         await common_handle_message(after)
