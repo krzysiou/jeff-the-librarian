@@ -42,7 +42,7 @@ class Spotify(commands.base_command.BaseCommand):
 
         response = requests.post(url="https://accounts.spotify.com/api/token", data=payload, headers={'Authorization': 'Basic '+base64_message})
         json_response = response.json()
-        print("json_response")
+        print(response)
         token = json_response["access_token"]
 
         if token:
