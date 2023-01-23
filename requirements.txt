@@ -11,5 +11,5 @@ tzlocal==2.0.0
 websockets==9.1
 requests==2.22.0
 beautifulsoup4==4.8.2
-spotipy==2.12.0
+spotipy==2.22.1
 regex==2020.1.8
